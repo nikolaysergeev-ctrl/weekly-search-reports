@@ -5,9 +5,13 @@ on:
     - cron: '0 9 * * 1'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   search:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v5
 
@@ -15,13 +19,13 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Run search agent
-        run: node weekly-search-agent.js
+      - run: npm install
+
+      - run: node weekly-search-agent.js
         env:
           OUTPUT_DIR: ./reports
 
-      - name: Commit and push results
-        run: |
+      - run: |
           git config user.name "Search Agent Bot"
           git config user.email "bot@example.com"
           git add reports/
