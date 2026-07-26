@@ -21,6 +21,8 @@ jobs:
 
       - run: npm install
 
+      - run: mkdir -p reports
+
       - run: node weekly-search-agent.js
         env:
           OUTPUT_DIR: ./reports
@@ -29,7 +31,7 @@ jobs:
           git config user.name "Search Agent Bot"
           git config user.email "bot@example.com"
           git add reports/
-          git commit -m "chore: update weekly search report [automated]" || echo "No changes"
+          git commit -m "Weekly report" || echo "No changes"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
