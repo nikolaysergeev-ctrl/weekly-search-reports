@@ -8,16 +8,20 @@ on:
 jobs:
   search:
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v5
+
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
-      - run: node weekly-search-agent.js
+
+      - name: Run search agent
+        run: node weekly-search-agent.js
         env:
           OUTPUT_DIR: ./reports
-      - run: |
+
+      - name: Commit and push results
+        run: |
           git config user.name "Search Agent Bot"
           git config user.email "bot@example.com"
           git add reports/
