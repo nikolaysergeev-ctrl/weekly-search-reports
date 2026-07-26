@@ -1,223 +1,649 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weekly Search Report</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 40px 20px;
-      color: #333;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-    }
-
-    .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 40px 30px;
-      text-align: center;
-    }
-
-    .header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .header .timestamp {
-      font-size: 0.9em;
-      opacity: 0.9;
-      font-weight: 500;
-    }
-
-    .content {
-      padding: 40px 30px;
-    }
-
-    .topic-section {
-      margin-bottom: 40px;
-      padding-bottom: 30px;
-      border-bottom: 2px solid #f0f0f0;
-    }
-
-    .topic-section:last-child {
-      border-bottom: none;
-    }
-
-    .topic-title {
-      font-size: 1.5em;
-      color: #667eea;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .results-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .result-item {
-      display: flex;
-      gap: 15px;
-      padding: 15px;
-      background: #f9f9f9;
-      border-left: 4px solid #667eea;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-    }
-
-    .result-item:hover {
-      background: #f0f5ff;
-      transform: translateX(5px);
-    }
-
-    .result-number {
-      flex-shrink: 0;
-      width: 30px;
-      height: 30px;
-      background: #667eea;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 0.9em;
-    }
-
-    .result-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .result-title {
-      font-size: 1.1em;
-      margin-bottom: 8px;
-      color: #333;
-      font-weight: 600;
-      line-height: 1.4;
-    }
-
-    .result-link {
-      color: #667eea;
-      text-decoration: none;
-      font-size: 0.85em;
-      word-break: break-all;
-      transition: color 0.2s;
-    }
-
-    .result-link:hover {
-      color: #764ba2;
-      text-decoration: underline;
-    }
-
-    .no-results {
-      color: #999;
-      font-style: italic;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .footer {
-      background: #f5f5f5;
-      padding: 20px 30px;
-      text-align: center;
-      font-size: 0.85em;
-      color: #666;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    .footer a {
-      color: #667eea;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .header h1 {
-        font-size: 1.8em;
-      }
-
-      .content {
-        padding: 20px;
-      }
-
-      .topic-title {
-        font-size: 1.3em;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Weekly Search Report</title>
+<style>
+body { font-family: Arial; background: #f0f2ff; padding: 40px; }
+.container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 12px; }
+.topic-title { color: #667eea; margin-bottom: 15px; }
+.result-item { background: #f9f9f9; padding: 15px; border-left: 4px solid #667eea; margin-bottom: 10px; }
+.result-link { color: #667eea; }
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>📰 Weekly Search Report</h1>
-      <div class="timestamp">Generated: 7/26/2026, 9:32:21 PM</div>
-    </div>
-    
-    <div class="content">
-      
-    <section class="topic-section">
-      <h2 class="topic-title">📌 Longevity Science &amp; Aging Biomarkers</h2>
-      <div class="results-container">
-        <p class="no-results">No results found</p>
+<div class="container">
+<h1>Weekly Search Report</h1>
+<p>Generated: 7/26/2026, 9:55:20 PM</p>
+
+      <section class="topic-section">
+        <h2 class="topic-title">📌 Longevity Science &amp; Aging Biomarkers</h2>
+        <div class="results-container">
+          
+      <div class="result-item">
+        <div class="result-number">1</div>
+        <div class="result-content">
+          <h4 class="result-title">Recommendations for biomarker data collection in clinical trials by longevity biotechnology companies | npj Aging</h4>
+          <a href="https://www.nature.com/articles/s41514-025-00313-1" target="_blank" class="result-link">https://www.nature.com/articles/s41514-025-00313-1</a>
+        </div>
       </div>
-    </section>
     
-    <section class="topic-section">
-      <h2 class="topic-title">📌 Obesity Medicine &amp; GLP-1/GIPR Therapies</h2>
-      <div class="results-container">
-        <p class="no-results">No results found</p>
+      <div class="result-item">
+        <div class="result-number">2</div>
+        <div class="result-content">
+          <h4 class="result-title">2025 Biomarkers of Aging Conference — Biomarkers of Aging Consortium</h4>
+          <a href="https://www.agingconsortium.org/conference-home" target="_blank" class="result-link">https://www.agingconsortium.org/conference-home</a>
+        </div>
       </div>
-    </section>
     
-    <section class="topic-section">
-      <h2 class="topic-title">📌 AI/ML in Precision Health</h2>
-      <div class="results-container">
-        <p class="no-results">No results found</p>
+      <div class="result-item">
+        <div class="result-number">3</div>
+        <div class="result-content">
+          <h4 class="result-title">Biomarkers of Aging–NIA Joint Symposium 2024: New Insights Into Aging Biomarkers - Herzog - 2025 - Aging Cell - Wiley Online Library</h4>
+          <a href="https://onlinelibrary.wiley.com/doi/10.1111/acel.70124" target="_blank" class="result-link">https://onlinelibrary.wiley.com/doi/10.1111/acel.70124</a>
+        </div>
       </div>
-    </section>
     
-    <section class="topic-section">
-      <h2 class="topic-title">📌 Regenerative Medicine &amp; Peptides</h2>
-      <div class="results-container">
-        <p class="no-results">No results found</p>
+      <div class="result-item">
+        <div class="result-number">4</div>
+        <div class="result-content">
+          <h4 class="result-title">Longevity Biomarkers: What to Track in 2026 | Progevita</h4>
+          <a href="https://progevita.com/en/blog/longevity-biomarkers-what-to-track/" target="_blank" class="result-link">https://progevita.com/en/blog/longevity-biomarkers-what-to-track/</a>
+        </div>
       </div>
-    </section>
     
-    <section class="topic-section">
-      <h2 class="topic-title">📌 Microbiome Research</h2>
-      <div class="results-container">
-        <p class="no-results">No results found</p>
+      <div class="result-item">
+        <div class="result-number">5</div>
+        <div class="result-content">
+          <h4 class="result-title">Biomarkers of Aging Challenge — Biomarkers of Aging Consortium</h4>
+          <a href="https://www.agingconsortium.org/challenge" target="_blank" class="result-link">https://www.agingconsortium.org/challenge</a>
+        </div>
       </div>
-    </section>
     
-    </div>
+      <div class="result-item">
+        <div class="result-number">6</div>
+        <div class="result-content">
+          <h4 class="result-title">Epigenetic Clocks: Beyond Biological Age, Using the Past to Predict the Present and Future - PMC</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12539533/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC12539533/</a>
+        </div>
+      </div>
     
-    <div class="footer">
-      <p>Auto-generated by Weekly Search Agent • <a href="#">View Raw Data</a></p>
-    </div>
-  </div>
+      <div class="result-item">
+        <div class="result-number">7</div>
+        <div class="result-content">
+          <h4 class="result-title">Epigenetic clock - Wikipedia</h4>
+          <a href="https://en.wikipedia.org/wiki/Epigenetic_clock" target="_blank" class="result-link">https://en.wikipedia.org/wiki/Epigenetic_clock</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">8</div>
+        <div class="result-content">
+          <h4 class="result-title">The ticking ‘epigenetic’ clock measures true biological age | St. Jude Research</h4>
+          <a href="https://www.stjude.org/research/progress/2024/ticking-epigenetic-clock-measures-true-biological-age.html" target="_blank" class="result-link">https://www.stjude.org/research/progress/2024/ticking-epigenetic-clock-measures-true-biological-age.html</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">9</div>
+        <div class="result-content">
+          <h4 class="result-title">Epigenetic Clocks 101: Biological vs Chronological Age in Aging Research - CD Genomics</h4>
+          <a href="https://www.cd-genomics.com/epigenetics/resource-epigenetic-clocks-overview.html" target="_blank" class="result-link">https://www.cd-genomics.com/epigenetics/resource-epigenetic-clocks-overview.html</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">10</div>
+        <div class="result-content">
+          <h4 class="result-title">Breaking new ground on human health and well-being with epigenetic clocks: A systematic review and meta-analysis of epigenetic age acceleration associations - ScienceDirect</h4>
+          <a href="https://www.sciencedirect.com/science/article/pii/S1568163724003702" target="_blank" class="result-link">https://www.sciencedirect.com/science/article/pii/S1568163724003702</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">11</div>
+        <div class="result-content">
+          <h4 class="result-title">Hallmarks of aging: An expanding universe: Cell</h4>
+          <a href="https://www.cell.com/cell/fulltext/S0092-8674(22)01377-0" target="_blank" class="result-link">https://www.cell.com/cell/fulltext/S0092-8674(22)01377-0</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">12</div>
+        <div class="result-content">
+          <h4 class="result-title">Hallmarks and mechanisms of cellular senescence in aging and disease | Cell Death Discovery</h4>
+          <a href="https://www.nature.com/articles/s41420-025-02655-x" target="_blank" class="result-link">https://www.nature.com/articles/s41420-025-02655-x</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">13</div>
+        <div class="result-content">
+          <h4 class="result-title">Hallmarks of senescence and aging - PMC - NIH</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6610675/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC6610675/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">14</div>
+        <div class="result-content">
+          <h4 class="result-title">The Hallmarks of Aging - PMC - NIH</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3836174/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC3836174/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">15</div>
+        <div class="result-content">
+          <h4 class="result-title">Hallmarks and mechanisms of cellular senescence in aging and disease - PubMed</h4>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/40759632/" target="_blank" class="result-link">https://pubmed.ncbi.nlm.nih.gov/40759632/</a>
+        </div>
+      </div>
+    
+        </div>
+      </section>
+    
+      <section class="topic-section">
+        <h2 class="topic-title">📌 Obesity Medicine &amp; GLP-1/GIPR Therapies</h2>
+        <div class="results-container">
+          
+      <div class="result-item">
+        <div class="result-number">1</div>
+        <div class="result-content">
+          <h4 class="result-title">Triple hormone receptor agonist retatrutide for metabolic dysfunction-associated steatotic liver disease: a randomized phase 2a trial | Nature Medicine</h4>
+          <a href="https://www.nature.com/articles/s41591-024-03018-2" target="_blank" class="result-link">https://www.nature.com/articles/s41591-024-03018-2</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">2</div>
+        <div class="result-content">
+          <h4 class="result-title">Triple Agonism Based Therapies for Obesity | Current Cardiovascular Risk Reports | Springer Nature Link</h4>
+          <a href="https://link.springer.com/article/10.1007/s12170-025-00770-z" target="_blank" class="result-link">https://link.springer.com/article/10.1007/s12170-025-00770-z</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">3</div>
+        <div class="result-content">
+          <h4 class="result-title">Retatrutide: A Triple GLP-1/GIP/Glucagon Receptor Agonist</h4>
+          <a href="https://superpower.com/guides/retatrutide" target="_blank" class="result-link">https://superpower.com/guides/retatrutide</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">4</div>
+        <div class="result-content">
+          <h4 class="result-title">Triple–Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial | New England Journal of Medicine</h4>
+          <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2301972" target="_blank" class="result-link">https://www.nejm.org/doi/full/10.1056/NEJMoa2301972</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">5</div>
+        <div class="result-content">
+          <h4 class="result-title">Efficacy and safety of retatrutide, a novel GLP-1, GIP ... - PMC</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12026077/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC12026077/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">6</div>
+        <div class="result-content">
+          <h4 class="result-title">The evolving landscape of obesity pharmacotherapy | Nature Reviews Drug Discovery</h4>
+          <a href="https://www.nature.com/articles/s41573-026-01427-1" target="_blank" class="result-link">https://www.nature.com/articles/s41573-026-01427-1</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">7</div>
+        <div class="result-content">
+          <h4 class="result-title">Obesity Medications: Evidence-Based Management - StatPearls - NCBI Bookshelf</h4>
+          <a href="https://www.ncbi.nlm.nih.gov/books/NBK618375/" target="_blank" class="result-link">https://www.ncbi.nlm.nih.gov/books/NBK618375/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">8</div>
+        <div class="result-content">
+          <h4 class="result-title">Recent progress in the pharmacotherapy for obesity - ScienceDirect</h4>
+          <a href="https://www.sciencedirect.com/science/article/pii/S0014299925006041" target="_blank" class="result-link">https://www.sciencedirect.com/science/article/pii/S0014299925006041</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">9</div>
+        <div class="result-content">
+          <h4 class="result-title">Frontiers | Pharmacotherapy for obesity: are we ready to select, tailor and combine pharmacotherapy to achieve more ambitious goals?</h4>
+          <a href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1569468/full" target="_blank" class="result-link">https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1569468/full</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">10</div>
+        <div class="result-content">
+          <h4 class="result-title">Pharmacotherapy for obesity: are we ready to select, tailor and combine pharmacotherapy to achieve more ambitious goals? - PMC</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12214899/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC12214899/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">11</div>
+        <div class="result-content">
+          <h4 class="result-title">Real‐world evidence on the utilization, clinical and comparative effectiveness, and adverse effects of newer GLP‐1RA‐based weight‐loss therapies - PMC</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12000858/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC12000858/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">12</div>
+        <div class="result-content">
+          <h4 class="result-title">Evidence-based weight loss interventions: Individualized treatment options to maximize patient outcomes - PubMed</h4>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/32969147/" target="_blank" class="result-link">https://pubmed.ncbi.nlm.nih.gov/32969147/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">13</div>
+        <div class="result-content">
+          <h4 class="result-title">Real-world evidence on the utilization, clinical and comparative effectiveness, and adverse effects of newer GLP-1RA-based weight-loss therapies - PubMed</h4>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/40196933/" target="_blank" class="result-link">https://pubmed.ncbi.nlm.nih.gov/40196933/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">14</div>
+        <div class="result-content">
+          <h4 class="result-title">Real‐world evidence on the utilization, clinical and comparative effectiveness, and adverse effects of newer GLP‐1RA‐based weight‐loss therapies - Thomsen - 2025 - Diabetes, Obesity and Metabolism - Wiley Online Library</h4>
+          <a href="https://dom-pubs.onlinelibrary.wiley.com/doi/full/10.1111/dom.16364" target="_blank" class="result-link">https://dom-pubs.onlinelibrary.wiley.com/doi/full/10.1111/dom.16364</a>
+        </div>
+      </div>
+    
+        </div>
+      </section>
+    
+      <section class="topic-section">
+        <h2 class="topic-title">📌 AI/ML in Precision Health</h2>
+        <div class="results-container">
+          
+      <div class="result-item">
+        <div class="result-number">1</div>
+        <div class="result-content">
+          <h4 class="result-title">The future of AI and precision health: What stands in the way | American Medical Association</h4>
+          <a href="https://www.ama-assn.org/practice-management/digital-health/future-ai-and-precision-health-what-stands-way" target="_blank" class="result-link">https://www.ama-assn.org/practice-management/digital-health/future-ai-and-precision-health-what-stands-way</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">2</div>
+        <div class="result-content">
+          <h4 class="result-title">Artificial intelligence and precision medicine | Scientific Reports</h4>
+          <a href="https://www.nature.com/articles/s41598-026-35404-w" target="_blank" class="result-link">https://www.nature.com/articles/s41598-026-35404-w</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">3</div>
+        <div class="result-content">
+          <h4 class="result-title">Artificial Intelligence in Precision Medicine for Diabetes and Other Chronic Diseases: Challenges and Opportunities in Developing Predictive Models and Biomarkers for Disease Initiation, Progression, Prevention, and Subtypes - 2024 - NIDDK</h4>
+          <a href="https://www.niddk.nih.gov/news/meetings-workshops/2024/artificial-intelligence-in-precision-medicine-of-diabetes-2024" target="_blank" class="result-link">https://www.niddk.nih.gov/news/meetings-workshops/2024/artificial-intelligence-in-precision-medicine-of-diabetes-2024</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">4</div>
+        <div class="result-content">
+          <h4 class="result-title">Artificial Intelligence and precision medicine for optimizing patient care: A comprehensive review - ScienceDirect</h4>
+          <a href="https://www.sciencedirect.com/science/article/pii/S3050837125000426" target="_blank" class="result-link">https://www.sciencedirect.com/science/article/pii/S3050837125000426</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">5</div>
+        <div class="result-content">
+          <h4 class="result-title">AI and Precision Medicine: Innovations and Applications | Biomedical Informatics | U of U School of Medicine</h4>
+          <a href="https://medicine.utah.edu/dbmi/aime/ai-and-precision" target="_blank" class="result-link">https://medicine.utah.edu/dbmi/aime/ai-and-precision</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">6</div>
+        <div class="result-content">
+          <h4 class="result-title">Context matters in machine learning based disease prediction with insights from diverse clinical and symptom data | Scientific Reports</h4>
+          <a href="https://www.nature.com/articles/s41598-025-26855-8" target="_blank" class="result-link">https://www.nature.com/articles/s41598-025-26855-8</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">7</div>
+        <div class="result-content">
+          <h4 class="result-title">Machine Learning Prediction of Biomarkers from SNPs and of Disease Risk from Biomarkers in the UK Biobank - PMC</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8308062/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC8308062/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">8</div>
+        <div class="result-content">
+          <h4 class="result-title">Multimodal AI/ML for discovering novel biomarkers and predicting disease using multi-omics profiles of patients with cardiovascular diseases | Scientific Reports</h4>
+          <a href="https://www.nature.com/articles/s41598-024-78553-6" target="_blank" class="result-link">https://www.nature.com/articles/s41598-024-78553-6</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">9</div>
+        <div class="result-content">
+          <h4 class="result-title">Discovering biomarkers associated and predicting cardiovascular disease with high accuracy using a novel nexus of machine learning techniques for precision medicine | Scientific Reports</h4>
+          <a href="https://www.nature.com/articles/s41598-023-50600-8" target="_blank" class="result-link">https://www.nature.com/articles/s41598-023-50600-8</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">10</div>
+        <div class="result-content">
+          <h4 class="result-title">Machine learning approaches for biomarker discovery to predict large-artery atherosclerosis | Scientific Reports</h4>
+          <a href="https://www.nature.com/articles/s41598-023-42338-0" target="_blank" class="result-link">https://www.nature.com/articles/s41598-023-42338-0</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">11</div>
+        <div class="result-content">
+          <h4 class="result-title">AI in Clinical Decision Support | Wolters Kluwer</h4>
+          <a href="https://www.wolterskluwer.com/en/solutions/uptodate/ai-clinical-decision-support" target="_blank" class="result-link">https://www.wolterskluwer.com/en/solutions/uptodate/ai-clinical-decision-support</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">12</div>
+        <div class="result-content">
+          <h4 class="result-title">AI-Driven Clinical Decision Support Systems - PMC</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11073764/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC11073764/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">13</div>
+        <div class="result-content">
+          <h4 class="result-title">AI-driven clinical decision support systems: Revolutionizing medication selection and personalized drug therapy - ScienceDirect</h4>
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S2212958825000886" target="_blank" class="result-link">https://www.sciencedirect.com/science/article/abs/pii/S2212958825000886</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">14</div>
+        <div class="result-content">
+          <h4 class="result-title">AI in Clinical Decision Support: What Responsible, Evidence-Based Solutions Should Deliver | Health-Notes</h4>
+          <a href="https://about.ebsco.com/blogs/health-notes/ai-clinical-decision-support-what-responsible-evidence-based-solutions-should" target="_blank" class="result-link">https://about.ebsco.com/blogs/health-notes/ai-clinical-decision-support-what-responsible-evidence-based-solutions-should</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">15</div>
+        <div class="result-content">
+          <h4 class="result-title">AI-Driven Clinical Decision Support Systems: An Ongoing Pursuit of Potential - PubMed</h4>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/38711724/" target="_blank" class="result-link">https://pubmed.ncbi.nlm.nih.gov/38711724/</a>
+        </div>
+      </div>
+    
+        </div>
+      </section>
+    
+      <section class="topic-section">
+        <h2 class="topic-title">📌 Regenerative Medicine &amp; Peptides</h2>
+        <div class="results-container">
+          
+      <div class="result-item">
+        <div class="result-number">1</div>
+        <div class="result-content">
+          <h4 class="result-title">Peptides and Stem Cells — The Perfect Regenerative Match | Swiss Medica</h4>
+          <a href="https://www.startstemcells.com/peptides-and-stem-cells.html" target="_blank" class="result-link">https://www.startstemcells.com/peptides-and-stem-cells.html</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">2</div>
+        <div class="result-content">
+          <h4 class="result-title">Harnessing the power of exosomes for regenerative therapies | Stanford Cardiovascular Institute | Stanford Medicine</h4>
+          <a href="https://med.stanford.edu/cvi/mission/news_center/articles_announcements/2023/exosomes-for-regenerative-therapies.html" target="_blank" class="result-link">https://med.stanford.edu/cvi/mission/news_center/articles_announcements/2023/exosomes-for-regenerative-therapies.html</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">3</div>
+        <div class="result-content">
+          <h4 class="result-title">Exosomes &amp; Peptides in Regenerative Anti-Aging Treatments - Colts Neck Stem Cells</h4>
+          <a href="https://coltsneckstemcells.com/exosomes-peptides-in-regenerative-anti-aging-treatments/" target="_blank" class="result-link">https://coltsneckstemcells.com/exosomes-peptides-in-regenerative-anti-aging-treatments/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">4</div>
+        <div class="result-content">
+          <h4 class="result-title">Exosomal therapy is a luxury area for regenerative medicine - ScienceDirect</h4>
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S0040816624002714" target="_blank" class="result-link">https://www.sciencedirect.com/science/article/abs/pii/S0040816624002714</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">5</div>
+        <div class="result-content">
+          <h4 class="result-title">What is Regenerative Medicine? A Guide to Stem Cells, Exosomes, PRP Injection, and Peptides Therapy | Perfect B</h4>
+          <a href="https://www.perfectb.com/what-is-regenerative-medicine-a-guide-to-stem-cells-exosomes-prp-injection-and-peptides-therapy/" target="_blank" class="result-link">https://www.perfectb.com/what-is-regenerative-medicine-a-guide-to-stem-cells-exosomes-prp-injection-and-peptides-therapy/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">6</div>
+        <div class="result-content">
+          <h4 class="result-title">BioRestorative</h4>
+          <a href="https://biorestorative.com/" target="_blank" class="result-link">https://biorestorative.com/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">7</div>
+        <div class="result-content">
+          <h4 class="result-title">Stem Cell-Based Therapy Development &amp; Manufacturing Solutions</h4>
+          <a href="https://www.bio-techne.com/research-areas/regenerative-medicine" target="_blank" class="result-link">https://www.bio-techne.com/research-areas/regenerative-medicine</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">8</div>
+        <div class="result-content">
+          <h4 class="result-title">Regenerative biotherapeutics: Pivoting toward a new strategy for fighting disease - Mayo Clinic News Network</h4>
+          <a href="https://newsnetwork.mayoclinic.org/discussion/regenerative-biotherapeutics-pivoting-toward-a-new-strategy-for-fighting-disease/" target="_blank" class="result-link">https://newsnetwork.mayoclinic.org/discussion/regenerative-biotherapeutics-pivoting-toward-a-new-strategy-for-fighting-disease/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">9</div>
+        <div class="result-content">
+          <h4 class="result-title">Overview - Center for Regenerative Biotherapeutics - Mayo Clinic Research</h4>
+          <a href="https://www.mayo.edu/research/centers-programs/center-regenerative-biotherapeutics/about/overview" target="_blank" class="result-link">https://www.mayo.edu/research/centers-programs/center-regenerative-biotherapeutics/about/overview</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">10</div>
+        <div class="result-content">
+          <h4 class="result-title">Regenerative Therapy - an overview | ScienceDirect Topics</h4>
+          <a href="https://www.sciencedirect.com/topics/engineering/regenerative-therapy" target="_blank" class="result-link">https://www.sciencedirect.com/topics/engineering/regenerative-therapy</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">11</div>
+        <div class="result-content">
+          <h4 class="result-title">Regeneration or Risk? A Narrative Review of BPC-157 for ...</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12446177/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC12446177/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">12</div>
+        <div class="result-content">
+          <h4 class="result-title">Peptides in Longevity Medicine: BPC-157, TB-500 &amp; More | AlyneMD</h4>
+          <a href="https://www.alynemd.com/blogs/peptides-in-longevity-medicine-bpc-157-tb-500-ipamorelin-mots-c" target="_blank" class="result-link">https://www.alynemd.com/blogs/peptides-in-longevity-medicine-bpc-157-tb-500-ipamorelin-mots-c</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">13</div>
+        <div class="result-content">
+          <h4 class="result-title">BPC-157 - Des Moines Peptide Therapy</h4>
+          <a href="https://www.iowaiv.com/longevity-peptides/bpc-157monthly-longevity-program" target="_blank" class="result-link">https://www.iowaiv.com/longevity-peptides/bpc-157monthly-longevity-program</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">14</div>
+        <div class="result-content">
+          <h4 class="result-title">BPC‑157: Healing Peptide for Recovery &amp; Longevity</h4>
+          <a href="https://www.carbonworldhealth.com/blog/bpc-157-the-game-changer-for-recovery-performance-longevity" target="_blank" class="result-link">https://www.carbonworldhealth.com/blog/bpc-157-the-game-changer-for-recovery-performance-longevity</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">15</div>
+        <div class="result-content">
+          <h4 class="result-title">The Peptide Craze - Part 2: BPC-157, NAD⁺ and the Truth Behind the “Longevity Molecule” Hype</h4>
+          <a href="https://www.bhinstitute.com/post/the-peptide-craze-part-2-bpc-127-bpc-157-nad-and-the-truth-behind-the-longevity-molecule-hyp" target="_blank" class="result-link">https://www.bhinstitute.com/post/the-peptide-craze-part-2-bpc-127-bpc-157-nad-and-the-truth-behind-the-longevity-molecule-hyp</a>
+        </div>
+      </div>
+    
+        </div>
+      </section>
+    
+      <section class="topic-section">
+        <h2 class="topic-title">📌 Microbiome Research</h2>
+        <div class="results-container">
+          
+      <div class="result-item">
+        <div class="result-number">1</div>
+        <div class="result-content">
+          <h4 class="result-title">Aging through the lens of the gut microbiome: Challenges and therapeutic opportunities - ScienceDirect</h4>
+          <a href="https://www.sciencedirect.com/science/article/pii/S2950307825000244" target="_blank" class="result-link">https://www.sciencedirect.com/science/article/pii/S2950307825000244</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">2</div>
+        <div class="result-content">
+          <h4 class="result-title">Frontiers | The gut microbiota and aging: interactions, implications, and interventions</h4>
+          <a href="https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2025.1452917/full" target="_blank" class="result-link">https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2025.1452917/full</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">3</div>
+        <div class="result-content">
+          <h4 class="result-title">The aging gut microbiome and its impact on host immunity | Genes &amp; Immunity</h4>
+          <a href="https://www.nature.com/articles/s41435-021-00126-8" target="_blank" class="result-link">https://www.nature.com/articles/s41435-021-00126-8</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">4</div>
+        <div class="result-content">
+          <h4 class="result-title">Microbiome-based therapeutics towards healthier aging and longevity - PMC</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12220006/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC12220006/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">5</div>
+        <div class="result-content">
+          <h4 class="result-title">From dysbiosis to longevity: a narrative review into the gut microbiome’s impact on aging | Journal of Biomedical Science | Springer Nature Link</h4>
+          <a href="https://link.springer.com/article/10.1186/s12929-025-01179-x" target="_blank" class="result-link">https://link.springer.com/article/10.1186/s12929-025-01179-x</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">6</div>
+        <div class="result-content">
+          <h4 class="result-title">Metabolic Role and Therapeutic Potential of the Microbiome | Endocrine Reviews | Oxford Academic</h4>
+          <a href="https://academic.oup.com/edrv/article/43/5/907/6517545" target="_blank" class="result-link">https://academic.oup.com/edrv/article/43/5/907/6517545</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">7</div>
+        <div class="result-content">
+          <h4 class="result-title">Gut microbiota in human metabolic health and disease | Nature Reviews Microbiology</h4>
+          <a href="https://www.nature.com/articles/s41579-020-0433-9" target="_blank" class="result-link">https://www.nature.com/articles/s41579-020-0433-9</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">8</div>
+        <div class="result-content">
+          <h4 class="result-title">Exploring the Gut Microbiota: Key Insights Into Its Role in Obesity, Metabolic Syndrome, and Type 2 Diabetes | The Journal of Clinical Endocrinology &amp; Metabolism | Oxford Academic</h4>
+          <a href="https://academic.oup.com/jcem/article/109/11/2709/7718329" target="_blank" class="result-link">https://academic.oup.com/jcem/article/109/11/2709/7718329</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">9</div>
+        <div class="result-content">
+          <h4 class="result-title">Frontiers | Microbiome-based therapeutics for metabolic disorders: harnessing microbial intrusions for treatment</h4>
+          <a href="https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2025.1695329/full" target="_blank" class="result-link">https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2025.1695329/full</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">10</div>
+        <div class="result-content">
+          <h4 class="result-title">Gut Microbiota and Metabolic Disorders - PMC - NIH</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4483604/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC4483604/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">11</div>
+        <div class="result-content">
+          <h4 class="result-title">Gut microbiome engineering with probiotics: current trends and future directions | Discover Applied Sciences | Springer Nature Link</h4>
+          <a href="https://link.springer.com/article/10.1007/s42452-025-07622-w" target="_blank" class="result-link">https://link.springer.com/article/10.1007/s42452-025-07622-w</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">12</div>
+        <div class="result-content">
+          <h4 class="result-title">An Integrated Engineering Approach to Creating Health‐Modulating Postbiotics - PMC</h4>
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12728392/" target="_blank" class="result-link">https://pmc.ncbi.nlm.nih.gov/articles/PMC12728392/</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">13</div>
+        <div class="result-content">
+          <h4 class="result-title">Probiotic and microbiota engineering for practical applications - ScienceDirect</h4>
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S2214799324000080" target="_blank" class="result-link">https://www.sciencedirect.com/science/article/abs/pii/S2214799324000080</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">14</div>
+        <div class="result-content">
+          <h4 class="result-title">Shaping the Future of Probiotics and Prebiotics - ScienceDirect</h4>
+          <a href="https://www.sciencedirect.com/science/article/pii/S0966842X21000056" target="_blank" class="result-link">https://www.sciencedirect.com/science/article/pii/S0966842X21000056</a>
+        </div>
+      </div>
+    
+      <div class="result-item">
+        <div class="result-number">15</div>
+        <div class="result-content">
+          <h4 class="result-title">Expanding microbiome innovation with postbiotics</h4>
+          <a href="https://nutraceuticalbusinessreview.com/expanding-microbiome-innovation-with-postbiotics" target="_blank" class="result-link">https://nutraceuticalbusinessreview.com/expanding-microbiome-innovation-with-postbiotics</a>
+        </div>
+      </div>
+    
+        </div>
+      </section>
+    
+</div>
 </body>
 </html>
