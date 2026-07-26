@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * Weekly Search Agent
- * Searches topics of interest and generates an HTML report
- * Runs on schedule via GitHub Actions or locally
+ * Weekly Search Agent (Brave Search Edition)
+ * Free API, no Azure required
  */
 
 const https = require('https');
@@ -54,25 +53,24 @@ const TOPICS = [
 ];
 
 /**
- * Fetch search results from Bing Web Search API
- * Requires env: BING_API_KEY
+ * Brave Search API (Free)
  */
 async function searchTopic(query) {
-  const apiKey = process.env.BING_API_KEY;
+  const apiKey = process.env.BRAVE_API_KEY;
   if (!apiKey) {
-    console.warn('⚠️ BING_API_KEY is not set. Returning empty results.');
+    console.error('❌ Missing BRAVE_API_KEY');
     return [];
   }
 
-  const endpoint = `https://api.bing.microsoft.com/v7.0/search?q=${encodeURIComponent(query)}&mkt=en-US`;
+  const endpoint = `https://api.search.brave.com/res/v1/web/search?q=${encodeURIComponent(query)}&count=5`;
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const req = https.request(
       endpoint,
       {
         method: 'GET',
         headers: {
-          'Ocp-Apim-Subscription-Key': apiKey
+          'X-Subscription-Token': apiKey
         },
         timeout: 8000
       },
@@ -82,16 +80,18 @@ async function searchTopic(query) {
         res.on('end', () => {
           try {
             const json = JSON.parse(data);
-            const items = (json.webPages?.value || [])
+
+            const items = (json.web?.results || [])
               .slice(0, 5)
               .map(r => ({
-                title: r.name || '',
+                title: r.title || '',
                 url: r.url || ''
               }))
               .filter(item => item.title && item.url);
+
             resolve(items);
           } catch (e) {
-            console.error('Error parsing Bing response:', e.message);
+            console.error('Parse error:', e.message);
             resolve([]);
           }
         });
@@ -99,7 +99,7 @@ async function searchTopic(query) {
     );
 
     req.on('error', err => {
-      console.error('Error calling Bing API:', err.message);
+      console.error('API error:', err.message);
       resolve([]);
     });
 
@@ -108,229 +108,8 @@ async function searchTopic(query) {
 }
 
 /**
- * Generate HTML report
+ * Escape HTML
  */
-function generateHTMLReport(results) {
-  const now = new Date().toLocaleString();
-  const topicSections = results
-    .map(topicResult => {
-      const resultsHTML = topicResult.results
-        .map(
-          (item, idx) => `
-    <div class="result-item">
-      <div class="result-number">${idx + 1}</div>
-      <div class="result-content">
-        <h4 class="result-title">${escapeHtml(item.title)}</h4>
-        <a href="${item.url}" target="_blank" class="result-link">${item.url}</a>
-      </div>
-    </div>
-    `
-        )
-        .join('');
-
-      return `
-    <section class="topic-section">
-      <h2 class="topic-title">📌 ${escapeHtml(topicResult.topic)}</h2>
-      <div class="results-container">
-        ${resultsHTML || '<p class="no-results">No results found</p>'}
-      </div>
-    </section>
-    `;
-    })
-    .join('');
-
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weekly Search Report</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 40px 20px;
-      color: #333;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-    }
-
-    .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 40px 30px;
-      text-align: center;
-    }
-
-    .header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .header .timestamp {
-      font-size: 0.9em;
-      opacity: 0.9;
-      font-weight: 500;
-    }
-
-    .content {
-      padding: 40px 30px;
-    }
-
-    .topic-section {
-      margin-bottom: 40px;
-      padding-bottom: 30px;
-      border-bottom: 2px solid #f0f0f0;
-    }
-
-    .topic-section:last-child {
-      border-bottom: none;
-    }
-
-    .topic-title {
-      font-size: 1.5em;
-      color: #667eea;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .results-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .result-item {
-      display: flex;
-      gap: 15px;
-      padding: 15px;
-      background: #f9f9f9;
-      border-left: 4px solid #667eea;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-    }
-
-    .result-item:hover {
-      background: #f0f5ff;
-      transform: translateX(5px);
-    }
-
-    .result-number {
-      flex-shrink: 0;
-      width: 30px;
-      height: 30px;
-      background: #667eea;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 0.9em;
-    }
-
-    .result-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .result-title {
-      font-size: 1.1em;
-      margin-bottom: 8px;
-      color: #333;
-      font-weight: 600;
-      line-height: 1.4;
-    }
-
-    .result-link {
-      color: #667eea;
-      text-decoration: none;
-      font-size: 0.85em;
-      word-break: break-all;
-      transition: color 0.2s;
-    }
-
-    .result-link:hover {
-      color: #764ba2;
-      text-decoration: underline;
-    }
-
-    .no-results {
-      color: #999;
-      font-style: italic;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .footer {
-      background: #f5f5f5;
-      padding: 20px 30px;
-      text-align: center;
-      font-size: 0.85em;
-      color: #666;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    .footer a {
-      color: #667eea;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .header h1 {
-        font-size: 1.8em;
-      }
-
-      .content {
-        padding: 20px;
-      }
-
-      .topic-title {
-        font-size: 1.3em;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>📰 Weekly Search Report</h1>
-      <div class="timestamp">Generated: ${escapeHtml(now)}</div>
-    </div>
-    
-    <div class="content">
-      ${topicSections}
-    </div>
-    
-    <div class="footer">
-      <p>Auto-generated by Weekly Search Agent • <a href="#">View Raw Data</a></p>
-    </div>
-  </div>
-</body>
-</html>`;
-
-  return html;
-}
-
 function escapeHtml(text) {
   const map = {
     '&': '&amp;',
@@ -343,54 +122,91 @@ function escapeHtml(text) {
 }
 
 /**
- * Main execution
+ * Generate HTML report
+ */
+function generateHTMLReport(results) {
+  const now = new Date().toLocaleString();
+
+  const topicSections = results.map(topicResult => {
+    const resultsHTML = topicResult.results.map((item, idx) => `
+      <div class="result-item">
+        <div class="result-number">${idx + 1}</div>
+        <div class="result-content">
+          <h4 class="result-title">${escapeHtml(item.title)}</h4>
+          <a href="${item.url}" target="_blank" class="result-link">${item.url}</a>
+        </div>
+      </div>
+    `).join('');
+
+    return `
+      <section class="topic-section">
+        <h2 class="topic-title">📌 ${escapeHtml(topicResult.topic)}</h2>
+        <div class="results-container">
+          ${resultsHTML || '<p class="no-results">No results found</p>'}
+        </div>
+      </section>
+    `;
+  }).join('');
+
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Weekly Search Report</title>
+<style>
+body { font-family: Arial; background: #f0f2ff; padding: 40px; }
+.container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 12px; }
+.topic-title { color: #667eea; margin-bottom: 15px; }
+.result-item { background: #f9f9f9; padding: 15px; border-left: 4px solid #667eea; margin-bottom: 10px; }
+.result-link { color: #667eea; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Weekly Search Report</h1>
+<p>Generated: ${escapeHtml(now)}</p>
+${topicSections}
+</div>
+</body>
+</html>`;
+}
+
+/**
+ * Main
  */
 async function main() {
-  console.log('🚀 Starting weekly search agent...');
+  console.log('🚀 Weekly Search Agent (Brave Edition)');
+
   const results = [];
 
   for (const topic of TOPICS) {
-    console.log(`📍 Searching: ${topic.name}`);
+    console.log(`🔎 Topic: ${topic.name}`);
     const topicResults = [];
 
     for (const query of topic.queries) {
-      try {
-        const items = await searchTopic(query);
-        topicResults.push(...items);
-        await new Promise(resolve => setTimeout(resolve, 500)); // small delay
-      } catch (error) {
-        console.error(`  ⚠️  Error searching "${query}":`, error.message);
-      }
+      const items = await searchTopic(query);
+      topicResults.push(...items);
+      await new Promise(r => setTimeout(r, 400));
     }
 
-    const uniqueResults = Array.from(
-      new Map(topicResults.map(item => [item.title + item.url, item])).values()
-    ).slice(0, 10);
-
-    results.push({
-      topic: topic.name,
-      results: uniqueResults
-    });
+    const unique = Array.from(new Map(topicResults.map(i => [i.url, i])).values());
+    results.push({ topic: topic.name, results: unique });
   }
 
   const html = generateHTMLReport(results);
-  const outputDir = process.env.OUTPUT_DIR || './reports';
 
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
+  const outputDir = process.env.OUTPUT_DIR || './reports';
+  fs.mkdirSync(outputDir, { recursive: true });
 
   const filename = `weekly-report-${new Date().toISOString().split('T')[0]}.html`;
-  const filepath = path.join(outputDir, filename);
-
-  fs.writeFileSync(filepath, html);
-  console.log(`✅ Report saved to: ${filepath}`);
-
+  fs.writeFileSync(path.join(outputDir, filename), html);
   fs.writeFileSync(path.join(outputDir, 'latest.html'), html);
-  console.log('✅ Latest report updated');
+
+  console.log('✅ Report generated');
 }
 
-main().catch(error => {
-  console.error('❌ Fatal error:', error);
+main().catch(err => {
+  console.error('Fatal error:', err);
   process.exit(1);
 });
