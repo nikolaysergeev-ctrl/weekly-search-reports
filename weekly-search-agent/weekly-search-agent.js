@@ -64,12 +64,30 @@ const TOPICS = [
  * Creates an empty file on first run so later writes don't fail.
  */
 function loadKnownSources() {
+  let raw;
   try {
-    const raw = fs.readFileSync(KNOWN_SOURCES_PATH, 'utf8');
-    const parsed = JSON.parse(raw);
-    return new Set(Array.isArray(parsed) ? parsed : []);
+    raw = fs.readFileSync(KNOWN_SOURCES_PATH, 'utf8');
   } catch (e) {
-    return new Set(); // file doesn't exist yet or is invalid -> start fresh
+    // File genuinely doesn't exist yet (first-ever run) -> that's fine, start fresh.
+    console.log('No known_sources.json found yet - starting fresh (first run).');
+    return new Set();
+  }
+
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) {
+      throw new Error('known_sources.json does not contain a JSON array');
+    }
+    return new Set(parsed);
+  } catch (e) {
+    // File EXISTS but is malformed (e.g. a manual edit broke the JSON).
+    // Do NOT silently treat this as "no known sources" - that would wipe out
+    // everything previously tracked. Fail loudly instead so it gets fixed,
+    // rather than quietly resetting hundreds of tracked URLs.
+    console.error('known_sources.json exists but failed to parse:', e.message);
+    console.error('Refusing to proceed with an empty known-sources list, since that would');
+    console.error('overwrite your tracked history. Fix the JSON syntax and re-run.');
+    process.exit(1);
   }
 }
 
