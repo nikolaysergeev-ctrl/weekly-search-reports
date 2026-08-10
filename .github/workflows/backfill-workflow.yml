@@ -1,0 +1,26 @@
+name: Backfill Metadata (One-Time)
+
+on:
+  workflow_dispatch:  # manual trigger only - this is NOT scheduled
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Run backfill script
+        run: node backfill_metadata.js
+
+      - name: Commit and push results
+        run: |
+          git config user.name "Search Agent Bot"
+          git config user.email "bot@example.com"
+          git add known_sources.json
+          git commit -m "chore: backfill titles/descriptions for legacy sources [one-time]" || echo "No changes"
+          git push
