@@ -1,11 +1,17 @@
 #!/usr/bin/env node
 
 /**
- * Weekly Search Agent (Brave Search Edition + New-Only Filtering)
+ * Weekly Search Agent (Brave Search Edition + New-Only Filtering + Master Index)
  * - Searches Brave API for each topic
  * - Filters out URLs already seen in previous runs (known_sources.json)
- * - Writes the HTML report AND updates known_sources.json so next week's
- *   run only shows genuinely new items.
+ * - Writes:
+ *     reports/weekly-report-DATE.html  -> only genuinely new links this run
+ *     reports/latest.html              -> same as above, always current
+ *     reports/master.html              -> EVERY known source ever found,
+ *                                          grouped by topic, with title + summary
+ * - known_sources.json now stores rich records: {url, title, description, topic, firstSeen}
+ *   (older runs only stored bare URL strings; those are auto-migrated on load,
+ *   just without a title/summary, which will remain blank for those legacy entries).
  */
 
 const https = require('https');
@@ -60,39 +66,59 @@ const TOPICS = [
 ];
 
 /**
- * Load the set of URLs already reported in previous runs.
- * Creates an empty file on first run so later writes don't fail.
+ * Load known sources. Supports both the OLD format (array of URL strings)
+ * and the NEW format (array of {url, title, description, topic, firstSeen}).
+ * Old entries are migrated in-memory to the new shape with blank metadata.
+ * Returns a Map keyed by url for O(1) lookup + easy merging.
  */
 function loadKnownSources() {
   let raw;
   try {
     raw = fs.readFileSync(KNOWN_SOURCES_PATH, 'utf8');
   } catch (e) {
-    // File genuinely doesn't exist yet (first-ever run) -> that's fine, start fresh.
     console.log('No known_sources.json found yet - starting fresh (first run).');
-    return new Set();
+    return new Map();
   }
 
+  let parsed;
   try {
-    const parsed = JSON.parse(raw);
+    parsed = JSON.parse(raw);
     if (!Array.isArray(parsed)) {
       throw new Error('known_sources.json does not contain a JSON array');
     }
-    return new Set(parsed);
   } catch (e) {
-    // File EXISTS but is malformed (e.g. a manual edit broke the JSON).
-    // Do NOT silently treat this as "no known sources" - that would wipe out
-    // everything previously tracked. Fail loudly instead so it gets fixed,
-    // rather than quietly resetting hundreds of tracked URLs.
     console.error('known_sources.json exists but failed to parse:', e.message);
     console.error('Refusing to proceed with an empty known-sources list, since that would');
     console.error('overwrite your tracked history. Fix the JSON syntax and re-run.');
     process.exit(1);
   }
+
+  const map = new Map();
+  for (const entry of parsed) {
+    if (typeof entry === 'string') {
+      // Legacy format: bare URL string, no metadata available.
+      map.set(entry, {
+        url: entry,
+        title: '',
+        description: '',
+        topic: 'Unknown (legacy entry)',
+        firstSeen: 'legacy'
+      });
+    } else if (entry && typeof entry === 'object' && entry.url) {
+      map.set(entry.url, {
+        url: entry.url,
+        title: entry.title || '',
+        description: entry.description || '',
+        topic: entry.topic || 'Unknown',
+        firstSeen: entry.firstSeen || 'unknown'
+      });
+    }
+  }
+  return map;
 }
 
-function saveKnownSources(knownSet) {
-  const arr = Array.from(knownSet);
+function saveKnownSources(knownMap) {
+  const arr = Array.from(knownMap.values());
   fs.writeFileSync(KNOWN_SOURCES_PATH, JSON.stringify(arr, null, 2));
 }
 
@@ -109,7 +135,8 @@ function dedupe(list) {
 }
 
 /**
- * Brave Search API, biased toward recent/new content
+ * Brave Search API, biased toward recent/new content.
+ * Now also captures the description snippet Brave returns, for use as a summary.
  */
 async function searchTopic(query) {
   if (!BRAVE_API_KEY) {
@@ -135,7 +162,11 @@ async function searchTopic(query) {
           try {
             const json = JSON.parse(data);
             const items = (json.web?.results || [])
-              .map(r => ({ title: r.title || '', url: r.url || '' }))
+              .map(r => ({
+                title: r.title || '',
+                url: r.url || '',
+                description: stripHtml(r.description || '')
+              }))
               .filter(item => item.title && item.url);
             resolve(items);
           } catch (e) {
@@ -155,12 +186,17 @@ async function searchTopic(query) {
   });
 }
 
+// Brave descriptions sometimes contain <strong> highlight tags - strip them for clean summaries
+function stripHtml(text) {
+  return text.replace(/<[^>]+>/g, '').trim();
+}
+
 function escapeHtml(text) {
   const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
   return String(text).replace(/[&<>"']/g, m => map[m]);
 }
 
-function generateHTMLReport(results) {
+function generateHTMLReport(results, titleText, subtitleText) {
   const now = new Date().toLocaleString();
 
   const topicSections = results.map(topicResult => {
@@ -169,6 +205,7 @@ function generateHTMLReport(results) {
         <div class="result-number">${idx + 1}</div>
         <div class="result-content">
           <h4 class="result-title">${escapeHtml(item.title)}</h4>
+          ${item.description ? `<p class="result-desc">${escapeHtml(item.description)}</p>` : ''}
           <a href="${item.url}" target="_blank" class="result-link">${item.url}</a>
         </div>
       </div>
@@ -176,9 +213,9 @@ function generateHTMLReport(results) {
 
     return `
       <section class="topic-section">
-        <h2 class="topic-title">📌 ${escapeHtml(topicResult.topic)}</h2>
+        <h2 class="topic-title">📌 ${escapeHtml(topicResult.topic)} <span class="count">(${topicResult.results.length})</span></h2>
         <div class="results-container">
-          ${resultsHTML || '<p class="no-results">No new results this week</p>'}
+          ${resultsHTML || '<p class="no-results">No results</p>'}
         </div>
       </section>
     `;
@@ -189,23 +226,28 @@ function generateHTMLReport(results) {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Weekly Search Report — New Only</title>
+<title>${escapeHtml(titleText)}</title>
 <style>
 body { font-family: -apple-system, Arial, sans-serif; background: #f0f2ff; padding: 40px; }
 .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
 h1 { color: #333; }
+.subtitle { color: #777; margin-top: -5px; }
 .topic-title { color: #667eea; margin: 25px 0 15px; }
+.topic-title .count { color: #999; font-size: 0.7em; font-weight: normal; }
 .result-item { display: flex; gap: 12px; background: #f9f9f9; padding: 15px; border-left: 4px solid #667eea; border-radius: 6px; margin-bottom: 10px; }
 .result-number { flex-shrink: 0; width: 26px; height: 26px; background: #667eea; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85em; font-weight: bold; }
 .result-title { margin-bottom: 6px; font-size: 1.05em; }
+.result-desc { color: #555; font-size: 0.92em; margin-bottom: 8px; line-height: 1.4; }
 .result-link { color: #667eea; font-size: 0.85em; word-break: break-all; }
 .no-results { color: #999; font-style: italic; }
+nav.jump { margin: 15px 0 25px; font-size: 0.9em; }
+nav.jump a { color: #667eea; margin-right: 12px; text-decoration: none; }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>📰 Weekly Search Report — New Only</h1>
-<p>Generated: ${escapeHtml(now)}</p>
+<h1>${escapeHtml(titleText)}</h1>
+<p class="subtitle">${escapeHtml(subtitleText)} &middot; Generated: ${escapeHtml(now)}</p>
 ${topicSections}
 </div>
 </body>
@@ -213,13 +255,13 @@ ${topicSections}
 }
 
 async function main() {
-  console.log('Starting weekly search agent (new-only mode)...');
+  console.log('Starting weekly search agent (new-only + master index mode)...');
 
-  const knownSources = loadKnownSources();
-  console.log(`Loaded ${knownSources.size} known sources from previous runs`);
+  const knownMap = loadKnownSources();
+  console.log(`Loaded ${knownMap.size} known sources from previous runs`);
 
-  const results = [];
-  const allUrlsThisRun = [];
+  const weeklyResults = [];
+  const today = new Date().toISOString().slice(0, 10);
 
   for (const topic of TOPICS) {
     console.log(`Topic: ${topic.name}`);
@@ -233,35 +275,64 @@ async function main() {
     }
 
     const deduped = dedupe(topicResults);
+    const newOnly = deduped.filter(item => !knownMap.has(item.url));
 
-    // Track every URL seen this run so it's marked "known" for next week,
-    // regardless of whether it makes it into this week's "new" report.
-    deduped.forEach(item => allUrlsThisRun.push(item.url));
+    // Merge everything seen this run into the known map (with metadata),
+    // tagging brand-new ones with today's date as firstSeen.
+    deduped.forEach(item => {
+      if (!knownMap.has(item.url)) {
+        knownMap.set(item.url, {
+          url: item.url,
+          title: item.title,
+          description: item.description,
+          topic: topic.name,
+          firstSeen: today
+        });
+      }
+    });
 
-    const newOnly = deduped.filter(item => !knownSources.has(item.url));
-
-    results.push({ topic: topic.name, results: newOnly });
+    weeklyResults.push({ topic: topic.name, results: newOnly });
   }
-
-  const html = generateHTMLReport(results);
 
   if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
-  const filename = path.join(
-    OUTPUT_DIR,
-    `weekly-report-${new Date().toISOString().slice(0, 10)}.html`
+  // --- Weekly "new only" report (unchanged behavior) ---
+  const weeklyHtml = generateHTMLReport(
+    weeklyResults,
+    '📰 Weekly Search Report — New Only',
+    'Links found for the first time this run'
   );
-  fs.writeFileSync(filename, html);
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'latest.html'), html);
-  console.log(`Report written: ${filename}`);
+  const weeklyFilename = path.join(OUTPUT_DIR, `weekly-report-${today}.html`);
+  fs.writeFileSync(weeklyFilename, weeklyHtml);
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'latest.html'), weeklyHtml);
+  console.log(`Weekly report written: ${weeklyFilename}`);
 
-  // Update known_sources.json with everything seen this run,
-  // so next week's run correctly treats these as "already seen".
-  allUrlsThisRun.forEach(url => knownSources.add(url));
-  saveKnownSources(knownSources);
-  console.log(`known_sources.json updated: ${knownSources.size} total URLs tracked`);
+  // --- Master index: every known source, ever, grouped by topic ---
+  const byTopic = new Map();
+  for (const record of knownMap.values()) {
+    if (!byTopic.has(record.topic)) byTopic.set(record.topic, []);
+    byTopic.get(record.topic).push(record);
+  }
+  // Sort each topic's entries newest-first (legacy entries with no date sort last)
+  const masterResults = Array.from(byTopic.entries()).map(([topic, items]) => ({
+    topic,
+    results: items.sort((a, b) => (b.firstSeen || '').localeCompare(a.firstSeen || ''))
+  }));
+
+  const masterHtml = generateHTMLReport(
+    masterResults,
+    '📚 Master Source Index',
+    `All sources ever found by the agent (${knownMap.size} total)`
+  );
+  const masterFilename = path.join(OUTPUT_DIR, 'master.html');
+  fs.writeFileSync(masterFilename, masterHtml);
+  console.log(`Master index written: ${masterFilename}`);
+
+  // --- Persist updated known sources (now with title/description/topic/date) ---
+  saveKnownSources(knownMap);
+  console.log(`known_sources.json updated: ${knownMap.size} total URLs tracked`);
 }
 
 main().catch(err => {
