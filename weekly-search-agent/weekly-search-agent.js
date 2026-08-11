@@ -102,7 +102,8 @@ function loadKnownSources() {
         title: '',
         description: '',
         topic: 'Unknown (legacy entry)',
-        firstSeen: 'legacy'
+        firstSeen: 'legacy',
+        publishedDate: null
       });
     } else if (entry && typeof entry === 'object' && entry.url) {
       map.set(entry.url, {
@@ -110,7 +111,8 @@ function loadKnownSources() {
         title: entry.title || '',
         description: entry.description || '',
         topic: entry.topic || 'Unknown',
-        firstSeen: entry.firstSeen || 'unknown'
+        firstSeen: entry.firstSeen || 'unknown',
+        publishedDate: entry.publishedDate || null
       });
     }
   }
@@ -205,6 +207,7 @@ function generateHTMLReport(results, titleText, subtitleText) {
         <div class="result-number">${idx + 1}</div>
         <div class="result-content">
           <h4 class="result-title">${escapeHtml(item.title)}</h4>
+          ${item.publishedDate ? `<p class="result-date">Published: ${escapeHtml(item.publishedDate)}</p>` : ''}
           ${item.description ? `<p class="result-desc">${escapeHtml(item.description)}</p>` : ''}
           <a href="${item.url}" target="_blank" class="result-link">${item.url}</a>
         </div>
@@ -237,6 +240,7 @@ h1 { color: #333; }
 .result-item { display: flex; gap: 12px; background: #f9f9f9; padding: 15px; border-left: 4px solid #667eea; border-radius: 6px; margin-bottom: 10px; }
 .result-number { flex-shrink: 0; width: 26px; height: 26px; background: #667eea; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85em; font-weight: bold; }
 .result-title { margin-bottom: 6px; font-size: 1.05em; }
+.result-date { color: #999; font-size: 0.78em; margin-bottom: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
 .result-desc { color: #555; font-size: 0.92em; margin-bottom: 8px; line-height: 1.4; }
 .result-link { color: #667eea; font-size: 0.85em; word-break: break-all; }
 .no-results { color: #999; font-style: italic; }
@@ -318,7 +322,13 @@ async function main() {
   // Sort each topic's entries newest-first (legacy entries with no date sort last)
   const masterResults = Array.from(byTopic.entries()).map(([topic, items]) => ({
     topic,
-    results: items.sort((a, b) => (b.firstSeen || '').localeCompare(a.firstSeen || ''))
+    results: items.sort((a, b) => {
+      // Prefer real publish date; fall back to when the agent first found the link.
+      // Entries with neither sort to the bottom.
+      const aKey = a.publishedDate || a.firstSeen || '';
+      const bKey = b.publishedDate || b.firstSeen || '';
+      return bKey.localeCompare(aKey);
+    })
   }));
 
   const masterHtml = generateHTMLReport(
