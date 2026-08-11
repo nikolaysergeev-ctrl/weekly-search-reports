@@ -2660,54 +2660,90 @@
     "title": "Retatrutide 2026: Phase 3 results, FDA timeline, vs. Wegovy/Zepbound",
     "description": "Key Takeaway: Unlike Wegovy (which targets one receptor) and Zepbound (which targets two), Retatrutide targets three: GLP-1, GIP, and Glucagon.",
     "topic": "Obesity Medicine & GLP-1/GIPR Therapies",
-    "firstSeen": "2026-08-11"
+    "firstSeen": "2026-08-11",
+    "publishedDate": null
   },
   {
     "url": "https://www.primetherapeutics.com/glp-1-pipeline-update-february-2026",
     "title": "GLP-1 Pipeline Update: February 2026 - Prime Therapeutics - Portal",
     "description": "Eli Lilly reports that tirzepatide is in clinical trials for autoimmune conditions in patients with obesity or overweight. These trials include its use as “monotherapy” in adults with T1DM, which are estimated to complete in 2027.",
     "topic": "Obesity Medicine & GLP-1/GIPR Therapies",
-    "firstSeen": "2026-08-11"
+    "firstSeen": "2026-08-11",
+    "publishedDate": null
   },
   {
     "url": "https://www.hcplive.com/view/oma-2026-recap-oral-pharmacotherapy-for-obesity",
     "title": "OMA 2026 Recap: Oral Pharmacotherapy for Obesity | HCPLive",
     "description": "Vedala then shifts to emerging obesity pharmacotherapy, particularly the introduction of oral GLP-1 therapies and data from the ATTAIN trial.",
     "topic": "Obesity Medicine & GLP-1/GIPR Therapies",
-    "firstSeen": "2026-08-11"
+    "firstSeen": "2026-08-11",
+    "publishedDate": null
   },
   {
     "url": "https://www.thno.org/v14p2099.htm",
     "title": "Engineered exosomes and composite biomaterials for tissue regeneration",
     "description": "A novel dual biospecific peptide (BSP) was used to retain MExos within the scaffold. The recruitment of endogenous neural stem cells (NSCs) by MExos to the site of injury, along with PTX-mediated induction of NSCs to generate neurons, enhanced motor functional recovery in rats following complete ...",
     "topic": "Regenerative Medicine & Peptides",
-    "firstSeen": "2026-08-11"
+    "firstSeen": "2026-08-11",
+    "publishedDate": null
   },
   {
     "url": "https://www.dvcstem.com/post/stem-cell-research",
     "title": "Stem Cell Research: The Future of Regenerative Medicine (2026)",
     "description": "Stem cell research is advancing rapidly in 2026, with breakthroughs in iPSC technology, organoid development, gene editing, and clinical applications for conditions ranging from spinal cord injuries to heart disease and diabetes.",
     "topic": "Regenerative Medicine & Peptides",
-    "firstSeen": "2026-08-11"
+    "firstSeen": "2026-08-11",
+    "publishedDate": null
   },
   {
     "url": "https://www.mdbiologix.com/post/research-roundup-july-2026",
     "title": "Regenerative Research Roundup – July 2026",
     "description": "While PRP and HA preparations are highly variable, the overall clinical narrative remains consistent: PRP+HA provides greater improvements in pain, function, and safety than PRP alone.",
     "topic": "Regenerative Medicine & Peptides",
-    "firstSeen": "2026-08-11"
+    "firstSeen": "2026-08-11",
+    "publishedDate": null
   },
   {
     "url": "https://holisticdrbright.com/peptides-longevity-functional-medicine-doctor-guide-2026/",
     "title": "Peptides for Longevity 2026: DAOM Guide to BPC-157, CJC | HolisticDrBright",
     "description": "After the 2026 FDA Category 1 reversal, the most studied peptides for longevity include BPC-157 (tissue repair, gut healing), MOTS-C (mitochondrial function, metabolic health), Thymosin Alpha-1 (immune modulation), and CJC-1295/Ipamorelin (growth ...",
     "topic": "Regenerative Medicine & Peptides",
-    "firstSeen": "2026-08-11"
+    "firstSeen": "2026-08-11",
+    "publishedDate": null
   },
   {
     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12777186/",
     "title": "Exploring the intricate link between gut microbiota dysbiosis and the aging process: implications for age-related diseases - PMC",
     "description": "This review sheds light on the ... neurodegenerative disorders, cardiovascular diseases, cancer and diabetes. Emerging research demonstrates a strong link between the gut microbiome and the aging process, although the underlying mechanisms remain under investigation...",
+    "topic": "Microbiome Research",
+    "firstSeen": "2026-08-11",
+    "publishedDate": null
+  },
+  {
+    "url": "https://www.eurekalert.org/news-releases/1116021",
+    "title": "Targeting Longevity 2026: Scientists shift the longevity debate from “fixing aging” to preserving biological coordination | EurekAlert!",
+    "description": "Instead of searching for a single “anti-aging” intervention, researchers are increasingly asking a different question: What if aging is not a defect, but a progressive loss of coordination between biological systems? This question will be at the center of the 2nd World Congress on Targeting Longevity, organized by the World Mitochondria Society (WMS) and the International Society of Microbiota (ISM), and held in Berlin on April 8–9, 2026.",
+    "topic": "Longevity Science & Aging Biomarkers",
+    "firstSeen": "2026-08-11"
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39753159/",
+    "title": "Recent advances in the application of engineered exosomes from mesenchymal stem cells for regenerative medicine - PubMed",
+    "description": "We discuss the last exosome research on regeneration disorders, highlighting the therapeutic applications of MSCs-derived exosomes. We also highlight future directions and challenges, underscoring the significance of addressing the main questions in the field. Keywords: Engineering; Exosomes; Extracellular vesicles; Mesenchymal stem cells; Regenerative medicine.",
+    "topic": "Regenerative Medicine & Peptides",
+    "firstSeen": "2026-08-11"
+  },
+  {
+    "url": "https://www.nature.com/subjects/regenerative-medicine",
+    "title": "Regenerative medicine - Latest research and news | Nature",
+    "description": "ResearchOpen Access24 Jul 2026 Communications Materials ... The authors identify PCSK5 as a pro-angiogenic factor from endothelial cells, with the potential to become a therapeutic target for ischemic diseases.",
+    "topic": "Regenerative Medicine & Peptides",
+    "firstSeen": "2026-08-11"
+  },
+  {
+    "url": "https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2026.1806152/full",
+    "title": "Frontiers | Precision nutrition targeting the gut microbiota for weight management: mechanisms and applications",
+    "description": "Precision nutrition strategies ... assess individual responses (Bai et al., 2026). Dietary modifications that enhance gut microbiota diversity may improve lipid metabolism....",
     "topic": "Microbiome Research",
     "firstSeen": "2026-08-11"
   }
