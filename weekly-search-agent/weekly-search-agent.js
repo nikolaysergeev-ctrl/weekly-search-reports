@@ -189,8 +189,35 @@ async function searchTopic(query) {
 }
 
 // Brave descriptions sometimes contain <strong> highlight tags - strip them for clean summaries
+const NAMED_ENTITIES = {
+  'amp': '&', 'lt': '<', 'gt': '>', 'quot': '"', 'apos': "'",
+  'nbsp': ' ', 'mdash': '\u2014', 'ndash': '\u2013', 'hellip': '\u2026',
+  'rsquo': '\u2019', 'lsquo': '\u2018', 'rdquo': '\u201d', 'ldquo': '\u201c',
+  'times': '\u00d7', 'deg': '\u00b0', 'micro': '\u00b5', 'plusmn': '\u00b1',
+  'alpha': '\u03b1', 'beta': '\u03b2', 'gamma': '\u03b3', 'delta': '\u03b4',
+  'rho': '\u03c1', 'sigma': '\u03c3', 'copy': '\u00a9', 'reg': '\u00ae',
+  'trade': '\u2122'
+};
+
+// Brave descriptions sometimes contain <strong> highlight tags AND raw HTML
+// entities (e.g. &#8220; &#961; &#8201; in scientific abstracts) - strip tags
+// and fully decode entities for clean, readable summaries.
 function stripHtml(text) {
-  return text.replace(/<[^>]+>/g, '').trim();
+  const noTags = text.replace(/<[^>]+>/g, '');
+  return noTags
+    .replace(/&#(\d+);/g, (match, dec) => {
+      try { return String.fromCodePoint(parseInt(dec, 10)); }
+      catch (e) { return match; }
+    })
+    .replace(/&#x([0-9a-fA-F]+);/g, (match, hex) => {
+      try { return String.fromCodePoint(parseInt(hex, 16)); }
+      catch (e) { return match; }
+    })
+    .replace(/&([a-zA-Z]+);/g, (match, name) => {
+      return NAMED_ENTITIES.hasOwnProperty(name) ? NAMED_ENTITIES[name] : match;
+    })
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function escapeHtml(text) {
