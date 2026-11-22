@@ -5,7 +5,8 @@
     "description": "2026 guide to longevity biomarkers: VO2max, grip strength, HbA1c, ApoB, hsCRP, suPAR, body composition, epigenetic age and what to test first.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-03-25"
+    "publishedDate": "2026-03-25",
+    "abstractSource": "none"
   },
   {
     "url": "https://honehealth.com/edge/longevity-trends/",
@@ -13,7 +14,9 @@
     "description": "Hone Health experts reveal the 26 longevity trends that will help people live better for longer in 2026.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstract": "Stephanie Andrews is a health copywriter and content strategist based in Chicago. She has worked with biotech, longevity, and performance-focused brands, including Tally Health, Good Inside, Found Health, Sika Health, Origin, Four Sigmatic, and more. When she’s not writing, you can also find her getting lit herself on fire, hit by cars, and dragged by horses as a professional stuntwoman.",
+    "abstractSource": "page"
   },
   {
     "url": "https://www.nature.com/articles/s41514-026-00339-z",
@@ -21,7 +24,8 @@
     "description": "Precise recommendations for humans to reach more than 100 years remain elusive. A recent multiomics study revealed that extreme age and poor health are not inherently linked. Longevity stems from a multifactorial resilience that involves protective genetics, efficient metabolism, low inflammation, and favorable lifestyle choices. Insights from centenarians and Blue Zones suggest that healthy aging is rooted in the synergistic interplay of biological, environmental, and above mentioned factors.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-02-05"
+    "publishedDate": "2026-02-05",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.aging-us.com/news-room/press-releases",
@@ -29,7 +33,8 @@
     "description": "(Could not fetch summary - page unreachable)",
     "topic": "Unclassified (needs review)",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstractSource": "none"
   },
   {
     "url": "https://biohackeralliance.com/insights/longevity-science-2026",
@@ -37,7 +42,8 @@
     "description": "Longevity science is moving fast. This guide covers caloric restriction, senolytics, NAD+ precursors, and the interventions with the strongest evidence…",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-03-02"
+    "publishedDate": "2026-03-02",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.nature.com/articles/s41514-026-00384-8",
@@ -45,7 +51,9 @@
     "description": "Biological aging is a complex process associated with declining physiological function and increased risk of aging-related diseases. However, its risk factors and molecular mechanisms remain poorly understood. Here, we performed a comprehensive integrative analysis to identify putative risk factors and molecular phenotypes associated with four epigenetic aging acceleration and human longevity. We first investigated the association between aging-related traits and potential risk factors using genome-wide association study (GWAS) data, identifying cholesterol levels, immune cell traits and insulin-like growth factor-1 (IGF1) as associated with longevity. To investigate the molecular mechanisms, we integrated GWAS summary data for epigenetic aging and longevity with five types of molecular QTL (xQTL) datasets, including gene expression (eQTL), splicing (sQTL), alternative polyadenylation (apaQTL), protein (pQTL), and metabolite QTL (mQTL). We identified 30 genes, 11 splicing events, 5 proteins, 3 alternative polyadenylation events, and 39 metabolites associated with aging-related traits, highlighting key regulatory mechanisms that link genetic variants to epigenetic aging and longevity. Drug-target annotation using DrugBank further prioritized therapeutic candidates, including CASP8, PSRC1 and SORT, as potential intervention targets. These findings provide a comprehensive resource for understanding the molecular architecture of aging and highlight potential novel targets for precision interventions in aging-related diseases.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-04-16"
+    "publishedDate": "2026-04-16",
+    "abstract": "Biological aging is a complex process associated with declining physiological function and increased risk of aging-related diseases. However, its risk factors and molecular mechanisms remain poorly understood. Here, we performed a comprehensive integrative analysis to identify putative risk factors and molecular phenotypes associated with four epigenetic aging acceleration and human longevity. We first investigated the association between aging-related traits and potential risk factors using genome-wide association study (GWAS) data, identifying cholesterol levels, immune cell traits and insulin-like growth factor-1 (IGF1) as associated with longevity. To investigate the molecular mechanisms, we integrated GWAS summary data for epigenetic aging and longevity with five types of molecular QTL (xQTL) datasets, including gene expression (eQTL), splicing (sQTL), alternative polyadenylation (apaQTL), protein (pQTL), and metabolite QTL (mQTL). We identified 30 genes, 11 splicing events, 5 proteins, 3 alternative polyadenylation events, and 39 metabolites associated with aging-related traits, highlighting key regulatory mechanisms that link genetic variants to epigenetic aging and longevity. Drug-target annotation using DrugBank further prioritized therapeutic candidates, including CASP8, PSRC1 and SORT, as potential intervention targets. These findings provide a comprehensive resource for understanding the molecular architecture of aging and highlight potential novel targets for precision interventions in aging-related diseases.",
+    "abstractSource": "europepmc"
   },
   {
     "url": "https://www.success.com/longevity-research-2026-new-findings",
@@ -53,7 +61,8 @@
     "description": "New research from Yale, Stanford and the BMJ is updating what we know about aging. Here’s what changed—and what it means for how you train, eat and connect.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-07-02"
+    "publishedDate": "2026-07-02",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.sciencedaily.com/releases/2026/06/260621060301.htm",
@@ -61,7 +70,8 @@
     "description": "A study of long-lived families has identified rare genetic variants that may help people stay healthier for much longer as they age. One standout mutation appears to temper inflammation, potentially delaying disease and extending years of healthy living.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstractSource": "none"
   },
   {
     "url": "https://www.gesda.global/radar-spotlight-longevity-science-crosses-clinical-threshold/",
@@ -69,7 +79,8 @@
     "description": "For centuries, humanity marked time chronologically. Today, that measure is rapidly being challenged, particularly when it comes to longevity.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2025-12-04"
+    "publishedDate": "2025-12-04",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.nature.com/articles/s41514-025-00313-1",
@@ -77,7 +88,9 @@
     "description": "Biomarkers of aging have the potential to transform geroscience clinical trials because of their broad applications in stratifying participants, prioritizing interventions, and monitoring responses to geroprotectors. As longevity biotechnology companies (LBCs) continue to plan and launch innovative clinical trials, standard practices in collecting data and applying biomarkers of aging will allow the field to support parallel and ongoing validation and benchmarking efforts for aging biomarkers. Moreover, defining best practices will ensure future reuse of valuable clinical data through pre-competitive alignment on shared tools. Here, we propose recommendations for such collections. We believe that wide adoption of these recommendations will allow LBCs to produce and leverage the highest quality data from their clinical trials, while also benefiting the geroscience field more broadly with minimal additional effort.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2025-12-23"
+    "publishedDate": "2025-12-23",
+    "abstract": "Biomarkers of aging have the potential to transform geroscience clinical trials because of their broad applications in stratifying participants, prioritizing interventions, and monitoring responses to geroprotectors. As longevity biotechnology companies (LBCs) continue to plan and launch innovative clinical trials, standard practices in collecting data and applying biomarkers of aging will allow the field to support parallel and ongoing validation and benchmarking efforts for aging biomarkers. Moreover, defining best practices will ensure future reuse of valuable clinical data through pre-competitive alignment on shared tools. Here, we propose recommendations for such collections. We believe that wide adoption of these recommendations will allow LBCs to produce and leverage the highest quality data from their clinical trials, while also benefiting the geroscience field more broadly with minimal additional effort.",
+    "abstractSource": "europepmc"
   },
   {
     "url": "https://www.foreverlabs.com/articles/blog/2026-the-year-of-longevity-and-owning-your-biology",
@@ -85,7 +98,8 @@
     "description": "Explore Forever Labs's outlook on 2026 trends in regenerative medicine. Longevity has transitioned from biohacking to a mainstream standard of care. Discover breakthroughs in \"bio-liquidity\", MSC priming, and epigenetic resetting, alongside regulatory shifts in the United States empowering patients to own their biology.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-01-23"
+    "publishedDate": "2026-01-23",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.cell.com/cell/pdf/S0092-8674(23)00857-7.pdf",
@@ -93,7 +107,8 @@
     "description": "(Could not fetch summary - page unreachable)",
     "topic": "Unclassified (needs review)",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstractSource": "none"
   },
   {
     "url": "https://www.nature.com/nataging/articles?year=2026",
@@ -101,7 +116,8 @@
     "description": "Browse the archive of articles on Nature Aging",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-08-10"
+    "publishedDate": "2026-08-10",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.gethealthspan.com/research/article/top-ten-longevity-anti-aging-breakthroughs-of-2025",
@@ -109,7 +125,8 @@
     "description": "Speak to a doctor about longevity protocols and prescriptions.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstractSource": "none"
   },
   {
     "url": "https://coldture.com/en-us/blogs/news/good-news-longevity-science-2026",
@@ -117,7 +134,9 @@
     "description": "The good news in longevity science: vitamin D may slow aging, walking keeps proving itself, and connection is medicine. 5 hopeful, research-backed findings.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-06-08"
+    "publishedDate": "2026-06-08",
+    "abstract": "Beneath the doom-laden health headlines, 2025 and 2026 delivered a run of genuinely good longevity news, and most of it is accessible and affordable. From a common vitamin that may slow biological aging to the quiet power of walking, Blue Zones, and connection, here are five hopeful findings worth knowing.",
+    "abstractSource": "page"
   },
   {
     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12905613/",
@@ -125,7 +144,8 @@
     "description": "(No summary available for this page)",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstractSource": "none"
   },
   {
     "url": "https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(26)00056-3/fulltext",
@@ -133,7 +153,8 @@
     "description": "(Could not fetch summary - page unreachable)",
     "topic": "Unclassified (needs review)",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstractSource": "none"
   },
   {
     "url": "https://www.agemd.com/insights/longevity/biological-age-epigenetic-clocks-2026",
@@ -141,7 +162,8 @@
     "description": "Biological age testing and epigenetic clocks are redefining longevity medicine in 2026. Learn what DNA methylation reveals about your healthspan, which clocks matter most, and why physician interpretation is the missing link.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-03-15"
+    "publishedDate": "2026-03-15",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.codeage.com/blogs/education/your-biological-age-and-your-calendar-age-may-not-agree-what-epigenetic-clocks-are-revealing",
@@ -149,7 +171,9 @@
     "description": "A 2026 Nature Aging study found biological age acceleration predicts mortality risk. Codeage explores what epigenetic clocks reveal about how the body actually ages.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-05-07"
+    "publishedDate": "2026-05-07",
+    "abstract": "Chronological age counts years. Biological age — measured by epigenetic clocks analyzing DNA methylation — may tell a different story. A 2026 longitudinal study in Nature Aging found that faster biological age acceleration independently predicts mortality risk. Codeage explores what this means for the science of healthy aging.",
+    "abstractSource": "page"
   },
   {
     "url": "https://pubmed.ncbi.nlm.nih.gov/42426219/",
@@ -157,7 +181,9 @@
     "description": "There are extensive ongoing efforts to slow or even reverse human aging, such as with epigenetic cellular reprogramming, thymus rejuvenation or senolytics. In parallel, new and diverse metrics-known as biological clocks-have been discovered and shown to track the pace of aging in an individual and t ��",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstract": "There are extensive ongoing efforts to slow or even reverse human aging, such as with epigenetic cellular reprogramming, thymus rejuvenation or senolytics. In parallel, new and diverse metrics-known as biological clocks-have been discovered and shown to track the pace of aging in an individual and their organs, tissues and cells. These clocks have multiple potential use cases, including identifying people at high risk of disease, serving as a foundation for prevention or early detection, and determining whether lifestyle factors or an intervention can modulate the aging process. This review provides a critical appraisal of the progress that is being made with biological clocks and how they might ultimately help understand pathobiology, reduce the burden of disease and extend healthspan.",
+    "abstractSource": "europepmc"
   },
   {
     "url": "https://www.sciencedaily.com/releases/2024/02/240214203341.htm",
@@ -165,7 +191,8 @@
     "description": "Investigators unveil a new form of epigenetic clock -- a machine learning model designed to predict biological age from DNA structure.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstractSource": "none"
   },
   {
     "url": "https://www.patsnap.com/resources/blog/rd-blog/epigenetic-clock-aging-biomarkers-2026-patsnap-eureka/",
@@ -173,7 +200,8 @@
     "description": "Epigenetic Clock Aging Biomarkers 2026 — PatSnap Eureka Technology Landscape 2026 Epigenetic Clock Aging Biomarker Technology Landscape DNA methylation",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-04-23"
+    "publishedDate": "2026-04-23",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.nature.com/articles/s41591-026-04495-3",
@@ -181,7 +209,9 @@
     "description": "There are extensive ongoing efforts to slow or even reverse human aging, such as with epigenetic cellular reprogramming, thymus rejuvenation or senolytics. In parallel, new and diverse metrics—known as biological clocks—have been discovered and shown to track the pace of aging in an individual and their organs, tissues and cells. These clocks have multiple potential use cases, including identifying people at high risk of disease, serving as a foundation for prevention or early detection, and determining whether lifestyle factors or an intervention can modulate the aging process. This review provides a critical appraisal of the progress that is being made with biological clocks and how they might ultimately help understand pathobiology, reduce the burden of disease and extend healthspan. This review outlines the state of the art of biological clocks and how they could help understand pathobiology, reduce the burden of disease and extend healthspan.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-07-09"
+    "publishedDate": "2026-07-09",
+    "abstract": "There are extensive ongoing efforts to slow or even reverse human aging, such as with epigenetic cellular reprogramming, thymus rejuvenation or senolytics. In parallel, new and diverse metrics-known as biological clocks-have been discovered and shown to track the pace of aging in an individual and their organs, tissues and cells. These clocks have multiple potential use cases, including identifying people at high risk of disease, serving as a foundation for prevention or early detection, and determining whether lifestyle factors or an intervention can modulate the aging process. This review provides a critical appraisal of the progress that is being made with biological clocks and how they might ultimately help understand pathobiology, reduce the burden of disease and extend healthspan.",
+    "abstractSource": "europepmc"
   },
   {
     "url": "https://www.mdpi.com/1422-0067/27/4/1908",
@@ -189,7 +219,8 @@
     "description": "(Could not fetch summary - page unreachable)",
     "topic": "Unclassified (needs review)",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstractSource": "none"
   },
   {
     "url": "https://lifespan.io/the-progress-and-future-of-biological-aging-clocks/",
@@ -197,7 +228,8 @@
     "description": "A recent review discusses the development of biological aging clocks, their capabilities and limitations, discoveries, and possible future developments.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-07-22"
+    "publishedDate": "2026-07-22",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2026.1836446/full",
