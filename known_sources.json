@@ -237,7 +237,9 @@
     "description": "Epigenetic aging clocks estimate age from DNA methylation patterns and have become central tools in longevity research. More recently, next-generation clocks...",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-05-29"
+    "publishedDate": "2026-05-29",
+    "abstract": "Epigenetic aging clocks estimate age from DNA methylation patterns and have become central tools in longevity research. More recently, next-generation clocks have been developed to better compensate for the known divergence between chronological age and epigenetic age in ways that relate to lifestyle, health, and age-related disease. Although epigenetic clocks represent investigational biomarkers, these newer models are more strongly associated with all-cause mortality risk than first-generation clocks. As such, interventions that modify them are of interest. To test this, we performed a series of systematic searches and identified 41 human studies reporting the effects of interventions on at least one next-generation epigenetic clock. Our data suggest that a diverse range of pharmaceutical, lifestyle, supplementation, non-pharmaceutical clinical, and psychosocial interventions can decrease epigenetic age, including exercise, a plant-rich diet, the GLP-1 receptor agonist semaglutide, caloric restriction, ketamine, omega-3 fatty acids, a multivitamin-multimineral supplement, umbilical cord plasma, and the cholesterol-lowering drug pitavastatin. Nicotinamide riboside, rapamycin, senolytics, and several other interventions showed no detectable effect, whereas plasmapheresis and other therapeutics accelerated epigenetic aging. We also summarize reported effect sizes and compare next-generation clocks with respect to their frequency of use and responsiveness to intervention.",
+    "abstractSource": "europepmc"
   },
   {
     "url": "https://www.nature.com/articles/s43587-026-01066-6",
@@ -245,7 +247,9 @@
     "description": "Epigenetic clocks derived from DNA methylation patterns are among the most promising biomarkers of biological aging1–7, as they capture molecular signatures that predict morbidity and mortality beyond chronological age. Although cross-sectional assessments of epigenetic age have been linked consistently to health outcomes and lifespan, it remains unclear whether the rate of change in these clocks over time provides additional insight into aging trajectories. In this longitudinal study of 699 adults from the InCHIANTI cohort followed for up to 24 years, we evaluated whether temporal acceleration of several epigenetic clocks—including first-, second- and third-generation epigenetic clocks—was associated with mortality. We found that faster increases in several clocks were linked robustly to higher risk of death, independent of baseline epigenetic age and other confounders. These findings suggest that dynamic changes in epigenetic aging reflect evolving health status and may serve as sensitive indicators for interventions aimed at extending healthspan and longevity. Epigenetic clocks are promising biomarkers of biological aging but require longitudinal evaluation. In this longitudinal study, the authors evaluated whether temporal acceleration of multiple epigenetic clocks was associated with mortality, and report that faster increases in several clocks were linked to higher risk of death, independent of baseline epigenetic age and other confounders.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-03-13"
+    "publishedDate": "2026-03-13",
+    "abstract": "Epigenetic clocks derived from DNA methylation patterns are among the most promising biomarkers of biological aging 1-7, as they capture molecular signatures that predict morbidity and mortality beyond chronological age. Although cross-sectional assessments of epigenetic age have been linked consistently to health outcomes and lifespan, it remains unclear whether the rate of change in these clocks over time provides additional insight into aging trajectories. In this longitudinal study of 699 adults from the InCHIANTI cohort followed for up to 24 years, we evaluated whether temporal acceleration of several epigenetic clocks-including first-, second- and third-generation epigenetic clocks-was associated with mortality. We found that faster increases in several clocks were linked robustly to higher risk of death, independent of baseline epigenetic age and other confounders. These findings suggest that dynamic changes in epigenetic aging reflect evolving health status and may serve as sensitive indicators for interventions aimed at extending healthspan and longevity.",
+    "abstractSource": "europepmc"
   },
   {
     "url": "https://www.sciencedirect.com/science/article/pii/S3050632826000211",
@@ -253,7 +257,8 @@
     "description": "(Could not fetch summary - page unreachable)",
     "topic": "Unclassified (needs review)",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstractSource": "none"
   },
   {
     "url": "https://www.news-medical.net/news/20260722/Five-epigenetic-clocks-reveal-shared-and-distinct-signals-of-aging.aspx",
@@ -261,7 +266,8 @@
     "description": "Researchers linked five epigenetic clocks to distinct blood gene-expression patterns and biological pathways in 3,227 Health and Retirement Study participants. TAGS derived from these patterns often showed stronger associations with frailty, functional measures, morbidity, and mortality than their parent clocks, although further validation is needed.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-07-22"
+    "publishedDate": "2026-07-22",
+    "abstractSource": "none"
   },
   {
     "url": "https://www.nature.com/articles/s41514-025-00312-2",
@@ -269,7 +275,9 @@
     "description": "Aging clocks use machine learning to estimate biological age as a proxy for general health state. Here, we critically examine their practical value, highlighting fundamental challenges: abstract definitions, inconsistent clinical validation, and ignored prediction uncertainty. By comparing aging clocks with expert risk scores, direct outcome predictors, and emerging large health models, we question their benefits and encourage researchers to explicitly justify clock advantage over established alternatives, ensuring truly actionable insights.",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2025-12-19"
+    "publishedDate": "2025-12-19",
+    "abstract": "Aging clocks use machine learning to estimate biological age as a proxy for general health state. Here, we critically examine their practical value, highlighting fundamental challenges: abstract definitions, inconsistent clinical validation, and ignored prediction uncertainty. By comparing aging clocks with expert risk scores, direct outcome predictors, and emerging large health models, we question their benefits and encourage researchers to explicitly justify clock advantage over established alternatives, ensuring truly actionable insights.",
+    "abstractSource": "europepmc"
   },
   {
     "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mco2.70827",
@@ -277,7 +285,9 @@
     "description": "(Could not fetch summary - page unreachable)",
     "topic": "Unclassified (needs review)",
     "firstSeen": "legacy",
-    "publishedDate": null
+    "publishedDate": null,
+    "abstract": "Cellular senescence, a stress-induced, irreversible cell cycle arrest coupled with a proinflammatory secretory phenotype, has emerged as both a central driver of aging and a tractable therapeutic target. Although acute senescence contributes beneficially to tumor suppression and wound healing, chronic accumulation of senescent cells sustains systemic inflammaging and accelerates organ dysfunction. This review synthesizes current progress in aging biology into a unified mechanistic and translational framework. We first examine how primary aging hallmarks, such as genomic instability and epigenetic dysregulation, interact to trigger cellular senescence, then explore how these converging molecular processes give rise to distinct age-related pathologies across reproductive, pulmonary, hepatic, neurological, skeletal, and metabolic systems. We further evaluate emerging interventional strategies, from senolytics and senomorphics to rejuvenation approaches, while addressing key translational barriers including targeting specificity, senescence heterogeneity, and equitable access. By uniting mechanistic insight with disease-oriented and therapeutic perspectives, this review charts a strategic roadmap for deploying senescence-targeting therapies to extend human healthspan.",
+    "abstractSource": "europepmc"
   },
   {
     "url": "https://www.frontiersin.org/journals/cellular-neuroscience/articles/10.3389/fncel.2026.1805691/full",
@@ -285,7 +295,9 @@
     "description": "Aging remains the predominant risk factor for Alzheimer’s disease (AD) and other neurodegenerative disorders, yet the mechanisms linking systemic aging to br...",
     "topic": "Longevity Science & Aging Biomarkers",
     "firstSeen": "legacy",
-    "publishedDate": "2026-05-19"
+    "publishedDate": "2026-05-19",
+    "abstract": "Aging remains the predominant risk factor for Alzheimer's disease (AD) and other neurodegenerative disorders, yet the mechanisms linking systemic aging to brain dysfunction remain incompletely understood. Cellular senescence, a state of stable cell-cycle arrest coupled with metabolic and secretory reprogramming, has emerged as a pivotal and context-dependent driver of brain aging. Accumulation of senescent glial cells (astrocytes, microglia, and oligodendrocyte progenitors) and emerging evidence of \"neurescence\" in post-mitotic neurons contribute to neuroinflammation, impaired proteostasis, and synaptic dysfunction. This review synthesizes molecular, cellular, and translational findings that reframe senescence as an active process shaping brain vulnerability. We discuss SASP-mediated neurotoxicity, crosstalk among senescent glial subtypes, and context-specific pathways (NF-κB, p38 MAPK, mTOR, cGAS-STING) as therapeutic targets. Senomorphic and senolytic strategies, alongside emerging systemic interventions such as therapeutic plasma exchange with albumin replacement, are evaluated for their potential to mitigate senescence burden and restore homeostasis. Integrating evidence from fluid, imaging, and multi-omic biomarkers, we highlight how senescence can now be monitored in vivo and stratified across disease stages. Multi-omic and spatial transcriptomic data reveal that central and peripheral senescence signatures only partially overlap, suggesting bidirectional communication across the brain-body axis. This systemic dimension raises key questions about whether modifying peripheral senescence or proteostasis could reshape CNS trajectories. However, key uncertainties remain, particularly regarding the causal role of senescence in human neurodegeneration, the specificity of current biomarkers, and the distinction between adaptive versus maladaptive senescence responses. Notably, direct evidence linking senescent cells to functional alterations in the human brain microenvironment remains limited. This review distinguishes itself from prior literature by integrating a multi-scale brain-body axis perspective, combining molecular, cellular, and systemic evidence to propose senescence as a bidirectional and context-dependent driver of neurodegeneration rather than a purely cell-autonomous process.",
+    "abstractSource": "europepmc"
   },
   {
     "url": "https://www.nih.gov/news-events/news-releases/nih-research-establishes-new-framework-role-senescence-aging",
