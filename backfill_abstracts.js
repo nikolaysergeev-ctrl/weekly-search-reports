@@ -2,7 +2,7 @@
 /**
  * Abstract backfill + master.html rebuild.
  * Reads known_sources.json, adds record.abstract (full abstract) + record.abstractSource,
- * then rewrites reports/master.html with the full abstracts (collapsible).
+ * then rewrites reports/master-abstracts.html with the full abstracts (collapsible).
  *
  * Resolution order per entry:
  *   1. Europe PMC by PMID (pubmed URL) / PMCID (PMC URL) / DOI (parsed from URL)
@@ -158,8 +158,8 @@ async function main() {
   const verFile = path.join(OUT, '.master_version');
   const version = (fs.existsSync(verFile) ? parseInt(fs.readFileSync(verFile, 'utf8'), 10) || 1 : 1) + 1;
   fs.writeFileSync(verFile, String(version));
-  fs.writeFileSync(path.join(OUT, 'master.html'), renderMaster(recs, version));
-  console.log('\nResults:', stat, `| total with abstract: ${recs.filter(r => r.abstract).length}/${recs.length} | master.html v${version}`);
+  fs.writeFileSync(path.join(OUT, 'master-abstracts.html'), renderMaster(recs, version));
+  console.log('\nResults:', stat, `| total with abstract: ${recs.filter(r => r.abstract).length}/${recs.length} | master-abstracts.html v${version}`);
 }
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });
 module.exports = { idsFromUrl, clean, renderMaster, sim, stripSite };
