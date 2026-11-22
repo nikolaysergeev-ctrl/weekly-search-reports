@@ -1,0 +1,40 @@
+name: Backfill Abstracts + Rebuild Master (One-Time)
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Max entries to process (0 = all; use 25 for a test run)'
+        default: '0'
+      force:
+        description: 'Retry entries previously marked none (1 = yes)'
+        default: '0'
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Fetch abstracts and rebuild master.html
+        run: node backfill_abstracts.js
+        env:
+          OUTPUT_DIR: ./reports
+          LIMIT: ${{ inputs.limit }}
+          FORCE: ${{ inputs.force }}
+
+      - name: Commit and push results
+        run: |
+          git config user.name "Search Agent Bot"
+          git config user.email "bot@example.com"
+          git add known_sources.json reports/master.html reports/.master_version
+          git commit -m "chore: backfill full abstracts, rebuild master.html" || echo "No changes"
+          git pull --rebase
+          git push
