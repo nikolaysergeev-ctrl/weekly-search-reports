@@ -1,4 +1,4 @@
-name: Backfill Abstracts + Rebuild Master (One-Time)
+name: Backfill Abstracts + Build KB File (One-Time)
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Fetch abstracts and rebuild master.html
+      - name: Fetch abstracts and build master-abstracts.html
         run: node backfill_abstracts.js
         env:
           OUTPUT_DIR: ./reports
@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "Search Agent Bot"
           git config user.email "bot@example.com"
-          git add known_sources.json reports/master.html reports/.master_version
-          git commit -m "chore: backfill full abstracts, rebuild master.html" || echo "No changes"
+          git add known_sources.json reports/master-abstracts.html reports/.master_version
+          git commit -m "chore: backfill full abstracts, build master-abstracts.html" || echo "No changes"
           git pull --rebase
           git push
